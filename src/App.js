@@ -1,22 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+
+  React.useEffect(() => {
+    //Initialize values
+  }, []);
+
+  function getTemperatures() {
+    //Refresh
+  }
+
+  const [temperature, updateTemperature] = React.useState(0);
+  const [recentTemps, updateRecentTemps] = React.useState([])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to Lab 4.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <span>Current temperature: {temperature} degrees</span>
+        <button onClick={getTemperatures}>Refresh</button>
+        <br />
+        <span>Recent temperatures</span>
+        <ol>
+          {/* {recentTemps.map(temp => {`<li>${temp}</li>`})} */}
+        </ol>
       </header>
     </div>
   );

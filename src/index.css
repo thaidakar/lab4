@@ -7,7 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App p {
+  position: relative;
+  top: -13em;
+}
+
+.App button {
+  border-style: none;
+  border-radius: 100px;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: orange;
+  margin-top: 20px;
 }
