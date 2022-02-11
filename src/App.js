@@ -10,12 +10,14 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <p>
-          Welcome to Lab 4.
-        </p>
-        <div className='navigation-buttons'>
-          <button className='event-button navigation-l' onClick={() => {navigate('/temperatures')}}>Temperatures</button>
-          <button className='event-button navigation-r' onClick={() => {navigate('/profile')}}>Profile</button>
+        <div>
+          <p>
+            Welcome to Lab 4.
+          </p>
+          <div className='navigation-buttons'>
+            <button className='event-button navigation-l' onClick={() => {navigate('/temperatures')}}>Temperatures</button>
+            <button className='event-button navigation-r' onClick={() => {navigate('/profile')}}>Profile</button>
+          </div>
         </div>
         <Routes>
           <Route path="" element={<Navigate replace to="/temperatures"/>} />

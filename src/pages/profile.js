@@ -37,11 +37,6 @@ export default function Profile() {
             sms: sms ?? ''
         }
 
-        // pInput.current?.setState({value: null});
-        // tInput.current?.setState({value: null});
-        // nInput.current?.setState({value: null});
-        // sInput.current?.setState({value: null});
-
         console.log(message);
 
         dataService.updateProfile(message.temperature_threshold, message.location, message.name, message.sms)

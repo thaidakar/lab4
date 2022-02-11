@@ -13,7 +13,7 @@ class DataService {
 
     updateProfile(threshold, location, name, sms)  {
         console.log(threshold + " " + location + " " + name + " " + sms)
-        return axios.post(url + event + eci + eid + 'sensor/profile_updated?threshold=' + threshold + '&location=' + location + '&name=' + name + '&sms=' + sms).then(x => x.data);
+        return axios.post(url + event + eci + eid + 'sensor/profile_updated?threshold=' + encodeURIComponent(threshold) + '&location=' + encodeURIComponent(location) + '&name=' + encodeURIComponent(name) + '&sms=' + encodeURIComponent(sms)).then(x => x.data);
     }
 
     getProfile() {
