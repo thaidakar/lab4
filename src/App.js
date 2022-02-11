@@ -1,33 +1,29 @@
 import React from 'react';
+import Temperatures from './pages/temperatures';
+import Profile from './pages/profile';
 import './App.css';
+import { Navigate, Outlet, Route, Routes, useNavigate } from "react-router";
 
 function App() {
-
-  React.useEffect(() => {
-    //Initialize values
-  }, []);
-
-  function getTemperatures() {
-    //Refresh
-  }
-
-  const [temperature, updateTemperature] = React.useState(0);
-  const [recentTemps, updateRecentTemps] = React.useState([])
+  const navigate = useNavigate();
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <p>
           Welcome to Lab 4.
         </p>
-        <span>Current temperature: {temperature} degrees</span>
-        <button onClick={getTemperatures}>Refresh</button>
-        <br />
-        <span>Recent temperatures</span>
-        <ol>
-          {/* {recentTemps.map(temp => {`<li>${temp}</li>`})} */}
-        </ol>
-      </header>
+        <div className='navigation-buttons'>
+          <button className='event-button navigation-l' onClick={() => {navigate('/temperatures')}}>Temperatures</button>
+          <button className='event-button navigation-r' onClick={() => {navigate('/profile')}}>Profile</button>
+        </div>
+        <Routes>
+          <Route path="" element={<Navigate replace to="/temperatures"/>} />
+          <Route path="temperatures" element={<Temperatures />}/>
+          <Route path="profile" element={<Profile />}/>
+        </Routes>
+        <Outlet />
+      </div>
     </div>
   );
 }
