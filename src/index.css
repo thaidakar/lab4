@@ -68,3 +68,7 @@ body {
   text-align: center;
   color: white;
 }
+
+.App .run-testing {
+  overflow-x:auto;
+}
